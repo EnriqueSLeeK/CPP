@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/18 16:08:16 by ensebast          #+#    #+#             */
+/*   Updated: 2022/12/18 16:27:19 by ensebast         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Dog.hpp"
+
+#include <iostream>
+#include <ostream>
+
+Dog::Dog (void) {
+    type = "Dog";
+    std::cout << "Dog constructed" << std::endl;
+}
+
+Dog::Dog (const Dog &animal) : Animal::Animal() {
+    type = animal.type;
+    std::cout << "Dog copied" << std::endl;
+}
+
+Dog &Dog::operator= (const Dog &animal) {
+    type = animal.type;
+    std::cout << "Dog copy assign" << std::endl;
+    return (*this);
+}
+
+Dog::~Dog (void) {
+    std::cout << "Dog destroyed" << std::endl;
+}
+
+void    Dog::makeSound (void) const {
+    std::cout << "Bark" << std::endl;
+}
