@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:48 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/15 16:48:53 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:27:06 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void    Harl::debug ( void ) {
     std::cout << "I love having extra bacon for my 8XL-double";
     std::cout << "-cheese-triple-pickle-special-";
     std::cout << "ketchup burger. I really do!" << std::endl;
+    std::cout << std::endl;
+    info();
 }
 
 void    Harl::info ( void ) {
@@ -26,6 +28,8 @@ void    Harl::info ( void ) {
     std::cout << "I cannot believe adding extra bacon costs more";
     std::cout << " money. You didn’t put enough bacon in my burger! ";
     std::cout << "If you did, I wouldn’t be asking for more!" << std::endl;
+    std::cout << std::endl;
+    warning();
 }
 
 void    Harl::warning ( void ) {
@@ -33,12 +37,15 @@ void    Harl::warning ( void ) {
     std::cout << "I think I deserve to have some extra bacon for";
     std::cout << " free. I’ve been coming for years whereas you ";
     std::cout << "started working here since last month." << std::endl;
+    std::cout << std::endl;
+    error();
 }
 
 void    Harl::error ( void ) {
     std::cout << "[ERROR]" << std::endl;
     std::cout << "This is unacceptable! I want to speak to ";
     std::cout << "the manager now." << std::endl;
+    std::cout << std::endl;
 }
 
 void    Harl::complain ( std::string speak) {
@@ -56,17 +63,18 @@ void    Harl::complain ( std::string speak) {
     switch (level) {
         case DEBUG:
             debug();
-            std::cout << std::endl;
+            break ;
         case INFO:
             info();
-            std::cout << std::endl;
+            break ;
         case WARNING:
             warning();
-            std::cout << std::endl;
+            break ;
         case ERROR:
             error();
-            std::cout << std::endl;
-        default:
             break ;
+        default:
+            std::cout <<
+                "[ Problably complaining about insignificant problems ]" << std::endl;
     }
 }

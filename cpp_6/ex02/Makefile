@@ -6,15 +6,15 @@
 #    By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/07 18:41:03 by ensebast          #+#    #+#              #
-#    Updated: 2022/12/20 19:18:23 by ensebast         ###   ########.fr        #
+#    Updated: 2022/12/21 01:00:01 by ensebast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -Iinclude
 
-NAME := harlFilter
-SRC := main.cpp Harl.cpp
+NAME := name
+SRC := main.cpp Base.cpp A.cpp B.cpp C.cpp Functions.cpp
 
 OBJ := $(SRC:cpp=o)
 
