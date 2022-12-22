@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:47 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/22 14:49:29 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/22 16:12:33 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ void    ContactBook::show_contact(int index) {
 }
 
 void	ContactBook::add_contact(Contact c) {
-    if (count == capacity)
+    if (count == capacity) {
         book[capacity - 1] = c;
+        return ;
+    }
     book[count] = c;
     count++;
 }

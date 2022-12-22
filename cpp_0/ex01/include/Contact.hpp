@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:50:06 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/15 16:51:03 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/22 16:11:43 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Contact {
 	public:
 
         Contact ();
+        Contact &operator=(const Contact &contact);
         Contact (std::string, std::string, std::string,
                 std::string, std::string);
 
