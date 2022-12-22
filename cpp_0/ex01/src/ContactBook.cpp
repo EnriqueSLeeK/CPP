@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:47 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/15 16:48:53 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:30:51 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    ContactBook::show_contact(int index) {
     std::cout << std::setw(10) << index << "|"
         << std::setw(10) << truncate(contact.get_first_name(), 10)  << "|"
         << std::setw(10) << truncate(contact.get_second_name(), 10) << "|"
-        << std::setw(10) << truncate(contact.get_nickname(), 10);
+        << std::setw(10) << truncate(contact.get_nickname(), 10) << std::endl;
 }
 
 void	ContactBook::add_contact(Contact c) {
