@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:47 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/22 14:30:51 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:49:29 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ContactBook::add_contact(Contact c) {
 void    ContactBook::search_contact(int index) {
     if (index >= capacity or index < 0)
         return (error_message("Index out of bound"));
-    if (index > count)
+    if (index >= count)
         return (error_message("The entry does not exist yet"));
     show_contact(index);
 }

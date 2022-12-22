@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:47 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/15 16:48:53 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:50:51 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,30 @@ Contact create_contact(std::string *fields) {
         return (contact);
 }
 
+int     get_index(void) {
+    std::cout << "Input an index: ";
+    int index = 0;
+    if (!(std::cin >> index) || std::cin.tellg() != -1)
+        return (-1);
+    return (index);
+}
+
 int main(void) {
 
 	ContactBook book;
     std::string contact_fields[5];
+    std::string cmd;
 
-    get_fields(contact_fields);
-    book.add_contact(create_contact(contact_fields));
-    book.search_contact(0);
+    do {
+        std::getline(std::cin, cmd);
+        if (cmd == "ADD") {
+            get_fields(contact_fields);
+            book.add_contact(create_contact(contact_fields));
+        }
+        else if (cmd == "SEARCH") {
+            book.search_contact(get_index());
+        }
+    } while (cmd != "EXIT");
+
 	return (0);
 }
