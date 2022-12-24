@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:35:41 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/17 15:26:42 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/23 22:31:11 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,5 @@ bool Point::bsp( Point const a, Point const b, Point const c, Point const point)
     Fixed partA = area(point, b, c);
     Fixed partB = area(a, point, c);
     Fixed partC = area(a, b, point);
-    std::cout << triangleArea << std::endl;
-    std::cout << partA + partB + partC << std::endl;
     return (triangleArea == (partA + partB + partC));
 }
