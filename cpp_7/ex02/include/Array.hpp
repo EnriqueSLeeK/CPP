@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:01:40 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 19:16:33 by ensebast         ###   ########.fr       */
+/*   Updated: 2022/12/24 20:45:35 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Array {
         T                   *array;
 
     public:
-        Array<T> (void) : quant(0), capacity(10),  array(new T[10]) {}
+        Array<T> (void) : quant(0), capacity(0),  array(NULL) {}
 
         Array<T> (unsigned int n) : quant(0), capacity(n), array(new T[n]) {}
 

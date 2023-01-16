@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:48:48 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/20 19:27:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:31:50 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void    Harl::error ( void ) {
 
 void    Harl::complain ( std::string speak) {
 
-    int level;
+    int level = -1;
     const char  *levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
     for (int i = 0; i < 4; i++) {
