@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/16 03:23:48 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:45:40 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main() {
 
     c = b;
 
+    a.setRawBits(1000);
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:57:04 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/17 15:00:24 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:34:05 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Point {
     private:
-        Fixed   x;
-        Fixed   y;
+        Fixed const   x;
+        Fixed const   y;
     public:
         Point ( void );
         Point (float x, float y);
@@ -28,10 +28,10 @@ class Point {
 
         Fixed getY( void ) const;
         Fixed getX( void ) const;
-
-        bool bsp( Point const a, Point const b, Point const c, Point const point );
-
-        Fixed area(Point const pOne, Point const pTwo, Point const pThree) const;
 };
+
+    bool bsp( Point const a, Point const b, Point const c, Point const point );
+
+    Fixed area(Point const pOne, Point const pTwo, Point const pThree);
 
 #endif
