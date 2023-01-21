@@ -6,7 +6,7 @@
 #    By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/07 18:41:03 by ensebast          #+#    #+#              #
-#    Updated: 2022/12/18 12:40:07 by ensebast         ###   ########.fr        #
+#    Updated: 2023/01/20 18:38:57 by ensebast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 NAME := FragTrap
-SRC := FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
+SRC := FragTrap.cpp ClapTrap.cpp main.cpp
 
 OBJ := $(SRC:cpp=o)
 

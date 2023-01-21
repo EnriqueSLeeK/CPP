@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 19:18:56 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/17 23:56:43 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:35:06 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,15 @@ ScavTrap::~ScavTrap ( void ) {
 
 void    ScavTrap::guardGate ( void ) {
     std::cout << "Thou shall not pass!" << std::endl;
+}
+
+void    ScavTrap::attack ( const std::string &target ) {
+    if (getEnergy() < 1) {
+        std::cout << "Look i'm tired of this, please let me rest..." << std::endl;
+        return ;
+    }
+    std::cout << "Scavtrap " << getName() << " attacks " << target << ", "
+        << "causing " << getAttack() << " points of damage!"
+        << std::endl;
+    setEnergy(getEnergy() - 1);
 }

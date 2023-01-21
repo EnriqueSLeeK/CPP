@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:25:03 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 12:39:28 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/21 15:26:51 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap (void) {
     setHp(100);
     setEnergy(100);
     setAttack(30);
-    std::cout << "FraTrap created" << std::endl;
+    std::cout << "FragTrap created" << std::endl;
 }
 
 FragTrap::FragTrap (std::string nameC) {
@@ -28,7 +28,7 @@ FragTrap::FragTrap (std::string nameC) {
     setHp(100);
     setEnergy(100);
     setAttack(30);
-    std::cout << "FraTrap " << getName() << " created" << std::endl;
+    std::cout << "FragTrap " << getName() << " created" << std::endl;
 }
 
 FragTrap::FragTrap (const FragTrap &obj) : ClapTrap::ClapTrap () {
@@ -36,7 +36,7 @@ FragTrap::FragTrap (const FragTrap &obj) : ClapTrap::ClapTrap () {
     setHp(obj.getHp());
     setEnergy(obj.getEnergy());
     setAttack(obj.getAttack());
-    std::cout << "FraTrap clone " << getName() << " created" << std::endl;
+    std::cout << "FragTrap clone " << getName() << " created" << std::endl;
 }
 
 FragTrap &FragTrap::operator= (const FragTrap &obj) {
@@ -44,7 +44,7 @@ FragTrap &FragTrap::operator= (const FragTrap &obj) {
     setHp(obj.getHp());
     setEnergy(obj.getEnergy());
     setAttack(obj.getAttack());
-    std::cout << "FraTrap copy assign " << getName() << " created" << std::endl;
+    std::cout << "FragTrap copy assign " << getName() << " created" << std::endl;
     return (*this);
 }
 
