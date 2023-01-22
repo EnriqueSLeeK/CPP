@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:41:31 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 13:46:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:30:52 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
         DiamondTrap &operator= (const DiamondTrap &obj);
         ~DiamondTrap (void);
 
+        void    attack(const std::string &target);
         void    whoAmI(void);
 };
 

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:21:37 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 12:39:44 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:47:51 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
     public:
         FragTrap (void);
         FragTrap (std::string nameC);

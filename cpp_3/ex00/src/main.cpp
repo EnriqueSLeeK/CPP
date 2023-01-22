@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 14:38:21 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:58:47 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main() {
     assign_C = cP;
     for (int i = 0; i < 13; i++)
         cP.attack( "Pew" );
-    cD.beRepaired( 40 );
-    cD.takeDamage( 300 );
-    cD.takeDamage( 40 );
+    cP.beRepaired( 40 );
+    cP.takeDamage( 300 );
+    cP.takeDamage( 40 );
     return (0);
 }
 

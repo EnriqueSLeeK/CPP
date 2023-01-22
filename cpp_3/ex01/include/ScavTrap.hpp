@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 19:02:23 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/20 18:33:35 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:54:29 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public ClapTrap {
         ScavTrap (const ScavTrap &obj);
         ScavTrap &operator= (const ScavTrap &obj);
         ~ScavTrap ( void );
+
         void guardGate(void);
         void attack(const std::string &target);
 };

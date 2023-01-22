@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 19:02:23 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/20 18:33:35 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:47:58 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 #include <string>
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : public virtual ClapTrap {
 
     public:
         ScavTrap ( void );

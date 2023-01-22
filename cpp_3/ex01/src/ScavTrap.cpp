@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 19:18:56 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/20 18:35:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:09:43 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,32 @@
 #include <ostream>
 
 ScavTrap::ScavTrap ( void ) {
-    setName ("");
-    setHp (100);
-    setEnergy (50);
-    setAttack (20);
+    name = "";
+    hp = 100;
+    energy = 50;
+    attack_point = 20;
     std::cout << "ScavTrap created" << std::endl;
 }
 
 ScavTrap::ScavTrap (std::string nameC) {
-    setName (nameC);
-    setHp (100);
-    setEnergy (50);
-    setAttack (20);
-    std::cout << "ScavTrap: " << getName() << " created!" << std::endl;
+    name = nameC;
+    hp = 100;
+    energy = 50;
+    attack_point = 20;
+    std::cout << "ScavTrap: " << name << " created!" << std::endl;
 }
 
-ScavTrap::ScavTrap (const ScavTrap &obj) : ClapTrap::ClapTrap() {
-    setName (obj.getName());
-    setHp (obj.getHp());
-    setEnergy (obj.getEnergy());
-    setAttack (obj.getAttack());
-    std::cout << "ScavTrap cloned: " << getName() << std::endl;
+ScavTrap::ScavTrap (const ScavTrap &obj) : ClapTrap(obj) {
+    *this = obj;
+    std::cout << "ScavTrap cloned: " << name << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &obj) {
-    setName (obj.getName());
-    setHp (obj.getHp());
-    setEnergy (obj.getEnergy());
-    setAttack (obj.getAttack());
-    std::cout << "ScavTrap cloned assign: " << getName() << std::endl;
+    name = obj.name;
+    hp = obj.hp;
+    energy = obj.energy;
+    attack_point = obj.attack_point;
+    std::cout << "ScavTrap cloned assign: " << name << std::endl;
     return (*this);
 }
 
@@ -56,12 +53,12 @@ void    ScavTrap::guardGate ( void ) {
 }
 
 void    ScavTrap::attack ( const std::string &target ) {
-    if (getEnergy() < 1) {
+    if (energy < 1) {
         std::cout << "Look i'm tired of this, please let me rest..." << std::endl;
         return ;
     }
-    std::cout << "Scavtrap " << getName() << " attacks " << target << ", "
-        << "causing " << getAttack() << " points of damage!"
+    std::cout << "Scavtrap " << name << " attacks " << target << ", "
+        << "causing " << attack_point << " points of damage!"
         << std::endl;
-    setEnergy(getEnergy() - 1);
+    energy -= 1;
 }

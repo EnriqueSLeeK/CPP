@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:25:03 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 14:14:35 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:12:46 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,32 @@
 #include <ostream>
 
 FragTrap::FragTrap (void) {
-    setName("");
-    setHp(100);
-    setEnergy(100);
-    setAttack(30);
+    name = "";
+    hp = 100;
+    energy = 100;
+    attack_point = 30;
     std::cout << "FragTrap created" << std::endl;
 }
 
 FragTrap::FragTrap (std::string nameC) {
-    setName(nameC);
-    setHp(100);
-    setEnergy(100);
-    setAttack(30);
-    std::cout << "FragTrap " << getName() << " created" << std::endl;
+    name = nameC;
+    hp = 100;
+    energy = 100;
+    attack_point = 30;
+    std::cout << "FragTrap " << name << " created" << std::endl;
 }
 
-FragTrap::FragTrap (const FragTrap &obj) : ClapTrap::ClapTrap () {
-    setName(obj.getName());
-    setHp(obj.getHp());
-    setEnergy(obj.getEnergy());
-    setAttack(obj.getAttack());
-    std::cout << "FragTrap clone " << getName() << " created" << std::endl;
+FragTrap::FragTrap (const FragTrap &obj) : ClapTrap(obj) {
+    *this = obj;
+    std::cout << "FragTrap clone " << name << " created" << std::endl;
 }
 
 FragTrap &FragTrap::operator= (const FragTrap &obj) {
-    setName(obj.getName());
-    setHp(obj.getHp());
-    setEnergy(obj.getEnergy());
-    setAttack(obj.getAttack());
-    std::cout << "FragTrap copy assign " << getName() << " created" << std::endl;
+    name = obj.name;
+    hp = obj.hp;
+    energy = obj.energy;
+    attack_point = obj.attack_point;
+    std::cout << "FragTrap copy assign " << name << " created" << std::endl;
     return (*this);
 }
 

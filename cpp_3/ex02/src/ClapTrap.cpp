@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:31:48 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/17 23:47:08 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:34:26 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,18 @@
 #include <iostream>
 #include <ostream>
 
-ClapTrap::ClapTrap () {
-    name = "";
-    hp = 10;
-    energy = 10;
-    attack_point = 0;
+ClapTrap::ClapTrap () :
+    name(""), hp(10), energy(10), attack_point(0) {
     std::cout << "Claptrap"<< " created!" << std::endl;
 }
 
-ClapTrap::ClapTrap (std::string nameC) {
-    name = nameC;
-    hp = 10;
-    energy = 10;
-    attack_point = 0;
+ClapTrap::ClapTrap (std::string nameC) :
+    name(nameC), hp(10), energy(10), attack_point(0) {
     std::cout << "Claptrap: " << name << " created!" << std::endl;
 }
 
 ClapTrap::ClapTrap (const ClapTrap &obj) {
-    name = obj.name;
-    hp = obj.hp;
-    energy = obj.energy;
-    attack_point = obj.attack_point;
+    *this = obj;
     std::cout << "Cloned ClapTrap " << name << " !" << std::endl;
 }
 
@@ -63,7 +54,7 @@ void    ClapTrap::attack ( const std::string &target ) {
 }
 
 void    ClapTrap::takeDamage ( unsigned int damage ) {
-    if (hp <= 0 || energy <= 0) {
+    if (hp <= 0) {
         std::cout << "I can't do this anymore!!!" << std::endl;
         return ;
     }
@@ -73,23 +64,12 @@ void    ClapTrap::takeDamage ( unsigned int damage ) {
 }
 
 void    ClapTrap::beRepaired ( unsigned int recover ) {
+    if (energy < 1) {
+        std::cout << "Repair denied!" << std::endl;
+        return ;
+    }
     hp += recover;
     std::cout << "Claptrap " << name << " recovered " << recover
         << " points of health" << std::endl;
+    energy--;
 }
-
-void    ClapTrap::setName (std::string nameC) { name = nameC; };
-
-void    ClapTrap::setHp (int hp_point) { hp = hp_point; }
-
-void    ClapTrap::setEnergy (int fuel) { energy = fuel; }
-
-void    ClapTrap::setAttack (int attack_power) { attack_point = attack_power; }
-
-std::string    ClapTrap::getName ( void ) const { return (name); }
-
-int    ClapTrap::getHp ( void ) const { return (hp); }
-
-int    ClapTrap::getEnergy ( void ) const { return (energy); }
-
-int    ClapTrap::getAttack ( void ) const { return (attack_point); }

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:57:56 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 14:17:02 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:33:18 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,32 @@
 #include <iostream>
 #include <ostream>
 
-DiamondTrap::DiamondTrap (void) {
+DiamondTrap::DiamondTrap (void) : ClapTrap() {
     name = "";
-    FragTrap::setName("");
-    FragTrap::setHp(FragTrap::getHp());
-    FragTrap::setEnergy(ScavTrap::getEnergy());
-    FragTrap::setAttack(FragTrap::getAttack());
+    hp = FragTrap::hp;
+    energy = ScavTrap::energy;
+    attack_point = FragTrap::attack_point;
     std::cout << "DiamondTrap created!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap (std::string nameC) {
+DiamondTrap::DiamondTrap (std::string nameC) : ClapTrap(nameC + "_clap_name") {
     name = nameC;
-    FragTrap::setName(nameC + "_clap_name");
-    FragTrap::setHp(FragTrap::getHp());
-    FragTrap::setEnergy(ScavTrap::getEnergy());
-    FragTrap::setAttack(FragTrap::getAttack());
+    hp = FragTrap::hp;
+    energy = ScavTrap::energy;
+    attack_point = FragTrap::attack_point;
     std::cout << "DiamondTrap: " << name << " created!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap (const DiamondTrap &obj) : ScavTrap::ScavTrap(), FragTrap::FragTrap() {
-    name = obj.name;
-    FragTrap::setName(obj.name + "_clap_name");
-    FragTrap::setHp(obj.FragTrap::getHp());
-    FragTrap::setEnergy(obj.ScavTrap::getEnergy());
-    FragTrap::setAttack(obj.FragTrap::getAttack());
+DiamondTrap::DiamondTrap (const DiamondTrap &obj) : ClapTrap(obj), ScavTrap(obj), FragTrap(obj) {
+    *this = obj;
     std::cout << "DiamondTrap " << name << " cloned!" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj) {
     name = obj.name;
-    FragTrap::setName(obj.name + "_clap_name");
-    FragTrap::setHp(obj.FragTrap::getHp());
-    FragTrap::setEnergy(obj.ScavTrap::getEnergy());
-    FragTrap::setAttack(obj.FragTrap::getAttack());
+    hp = obj.hp;
+    energy = obj.energy;
+    attack_point = obj.attack_point;
     std::cout << "DiamondTrap assign copy " << name << std::endl;
     return (*this);
 }
@@ -57,8 +50,12 @@ DiamondTrap::~DiamondTrap (void) {
         << std::endl;
 }
 
+void DiamondTrap::attack (const std::string &target) {
+    ScavTrap::attack(target);
+}
+
 void    DiamondTrap::whoAmI (void) {
-    std::cout << "My base identity is " << FragTrap::getName()
+    std::cout << "My base identity is " << ClapTrap::name
         << " and my newest identity is " << name << "!"
         << std::endl;
 }
