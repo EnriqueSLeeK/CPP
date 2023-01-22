@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:57:56 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/22 19:33:18 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 19:44:00 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ DiamondTrap::DiamondTrap (void) : ClapTrap() {
     std::cout << "DiamondTrap created!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap (std::string nameC) : ClapTrap(nameC + "_clap_name") {
+DiamondTrap::DiamondTrap (std::string nameC) : ClapTrap() {
     name = nameC;
     hp = FragTrap::hp;
     energy = ScavTrap::energy;
     attack_point = FragTrap::attack_point;
+    ClapTrap::name = name + "_clap_name";
     std::cout << "DiamondTrap: " << name << " created!" << std::endl;
 }
 
