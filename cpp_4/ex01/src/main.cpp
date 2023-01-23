@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/22 23:13:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:05:35 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,21 @@ static void deep_copy () {
 
 }
 
+void destructor_test (){
+    Animal *animal[10];
+    for (int i = 0; i < 5; i++)
+        animal[i] = new Cat();
+    for (int i = 0; i < 5; i++)
+        animal[i + 5] = new Dog();
+
+    for (int i = 0; i < 10; i++)
+        delete animal[i];
+}
+
 int main() {
+    std::cout << "Destructor test" << std::endl;
+    destructor_test();
+
     std::cout << std::endl << "-Basic" << std::endl << std::endl;
     basic_operation_test();
     polymorphism();
