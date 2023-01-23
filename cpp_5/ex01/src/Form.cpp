@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 09:54:26 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 13:54:18 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:43:12 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ Form::~Form (void) {
 
 void                Form::beSigned(const Bureaucrat &bureaucrat) {
     try {
-        if (bureaucrat.getGrade() > gradeSignin)
+        if (bureaucrat.getGrade() != -1
+            && bureaucrat.getGrade() > gradeSignin)
             throw Form::GradeTooLowException();
         sign = true;
     }
@@ -102,9 +103,10 @@ bool                Form::getSignStatus (void) const {
 
 
 std::ostream    &operator<< (std::ostream &out, Form &form) {
-    out << "Form:" << std::endl
+    out << "Form" << std::endl
         << "name: " << form.getName() << std::endl
         << "sign-in grade: " << form.getGradeSignin() << std::endl
-        << "execute grade: " << form.getGradeToExecute() << std::endl;
+        << "execute grade: " << form.getGradeToExecute() << std::endl
+        << "status: " << form.getSignStatus() << std::endl;
     return (out);
 }

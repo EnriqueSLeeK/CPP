@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 10:39:55 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:41:38 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void    form_test () {
     Form       form_two("random", 150, 1);
     bb.signForm(form);
     bb.signForm(form_two);
+
+    std::cout << form << std::endl;
 
     Form       a("", 160, 1);
     Form       b("", 1, 160);

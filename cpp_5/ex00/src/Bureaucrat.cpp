@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 02:42:45 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 14:27:30 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:17:27 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
     return ("Grade too low");
 }
 
-Bureaucrat::Bureaucrat (void) : name("Default") {
+Bureaucrat::Bureaucrat (void) : name("Default"), grade(150) {
     grade = 150;
 }
 
-Bureaucrat::Bureaucrat (const std::string nameB, int gradeB) : name(nameB) {
+Bureaucrat::Bureaucrat (const std::string nameB, int gradeB) : name(nameB), grade(gradeB) {
     try {
-        if (gradeB > 150)
+        if (grade > 150)
             throw Bureaucrat::GradeTooLowException();
-        else if (gradeB < 1)
+        else if (grade < 1)
             throw Bureaucrat::GradeTooHighException();
-        grade = gradeB;
     }
     catch (Bureaucrat::GradeTooLowException &e) {
         std::cout << e.what() << std::endl;

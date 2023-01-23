@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 09:54:26 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 13:58:04 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:53:18 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ std::ostream    &operator<< (std::ostream &out, AForm &form) {
     out << "Form:" << std::endl
         << "name: " << form.getName() << std::endl
         << "sign-in grade: " << form.getGradeSignin() << std::endl
-        << "execute grade: " << form.getGradeToExecute() << std::endl;
+        << "execute grade: " << form.getGradeToExecute() << std::endl
+        << "status: " << form.getSignStatus() << std::endl;
     return (out);
 }

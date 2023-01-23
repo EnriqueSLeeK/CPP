@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 03:57:28 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:19:48 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main() {
     h.increment();
     h.increment();
     h.increment();
-    h.increment();
+    h.increment(); // Show msg at this point grade < 1
     h.increment();
     h.increment();
     h.increment();
