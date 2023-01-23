@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/22 23:41:32 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:58:16 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,13 @@ void basic_test() {
 
 void too_many_materia() {
     MateriaSource* src = new MateriaSource();
+    AMateria *aux =  new Cure();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(aux);
+    delete aux;
 
     ICharacter* me = new Character("me");
 
