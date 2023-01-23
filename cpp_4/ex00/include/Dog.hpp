@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 15:58:29 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 16:47:38 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:39:35 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal {
         Dog &operator=(const Dog &animal);
         ~Dog (void);
 
-        virtual void    makeSound(void) const;
+        void    makeSound(void) const;
 };
 
 #endif

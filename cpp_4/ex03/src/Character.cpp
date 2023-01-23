@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 20:53:39 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/22 23:38:23 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:36:57 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void    Character::unequip (int idx) {
 }
 
 void    Character::equip (AMateria *m) {
+    if (m->getEquiped() == 1) {
+        std::cout << "Is already being used!" << std::endl;
+        return ;
+    }
     int idx = findEmptySlot();
     if (idx == -1) {
         std::cout << "Inventory is full, please drop some <materia>"
             << std::endl;
-        return ;
-    }
-    else if (m->getEquiped() == 1) {
-        std::cout << "Is already being used!" << std::endl;
         return ;
     }
     std::cout << "Equipped!"

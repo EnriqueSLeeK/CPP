@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:00:31 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/22 23:06:44 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:40:04 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat : public Animal {
         Cat &operator= (const Animal &animal);
         ~Cat (void);
 
-        virtual void    makeSound (void) const;
+        void    makeSound (void) const;
 
         void    addIdea(const std::string &idea) const;
         void    speakIdea(int index) const;
