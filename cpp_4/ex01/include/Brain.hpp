@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:37:17 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 19:06:42 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 21:03:05 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Brain {
         Brain (const Brain &obj);
         Brain &operator= (const Brain &obj);
         ~Brain (void);
+
         void    add_idea (std::string idea);
         void    show_idea (int index) const;
         void    delete_idea (void);

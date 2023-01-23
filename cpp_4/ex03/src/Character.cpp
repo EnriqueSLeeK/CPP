@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 20:53:39 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 01:36:13 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:38:23 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ Character::~Character (void) {
 }
 
 void    Character::unequip (int idx) {
-    if (idx < 0 || idx >= 4 || inventory[idx] == NULL) {
+    if (idx < 0 || idx > 3 || inventory[idx] == NULL) {
         std::cout << "There is nothing to unequip" << std::endl;
         return ;
     }
+    std::cout << "Dropped" << std::endl;
     inventory[idx]->setEquiped(0);
     inventory[idx] = NULL;
 }
@@ -54,6 +55,12 @@ void    Character::equip (AMateria *m) {
             << std::endl;
         return ;
     }
+    else if (m->getEquiped() == 1) {
+        std::cout << "Is already being used!" << std::endl;
+        return ;
+    }
+    std::cout << "Equipped!"
+        << std::endl;
     m->setEquiped(1);
     inventory[idx] = m;
 }

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 21:46:02 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 01:27:11 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:46:47 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <ostream>
 
 Cure::Cure () {
+    std::cout << "Cure created" << std::endl;
     type = "cure";
     equiped = 0;
 }
@@ -29,7 +30,9 @@ Cure &Cure::operator= (const Cure &materia) {
     return (*this);
 }
 
-Cure::~Cure (void) {}
+Cure::~Cure (void) {
+    std::cout << "Cure Destroyed!!" << std::endl;
+}
 
 void    Cure::use(ICharacter &target) {
     std::cout << "* heals "  << target.getName() << "'s wounds"

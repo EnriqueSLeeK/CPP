@@ -6,13 +6,12 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 19:42:49 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:13:06 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 #include <iostream>
 #include <ostream>
@@ -56,60 +55,52 @@ static void polymorphism () {
     delete j;
 }
 
-static void polymorphism_two () {
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* i = new WrongCat();
-
-    std::cout << i->getType() << " " << std::endl;
-
-    meta->makeSound();
-    i->makeSound();
-
-    delete meta;
-    delete i;
-}
-
 static void deep_copy () {
     const   Animal* pri = new Dog();
-    Animal* copied = NULL;
-
-    Brain *brain = pri->getBrain();
-    brain->add_idea("wow!!!!!!!!!!!!!!!!");
-    brain->add_idea("such idea!!!!!");
-
-    copied = new Dog(*pri);
-    delete pri;
-    brain = copied->getBrain();
-    brain->show_idea(0);
-    brain->show_idea(1);
-
-    delete copied;
-
     const   Animal* sec = new Cat();
-    brain = sec->getBrain();
-    brain->add_idea("Big fish good!");
-    brain->add_idea("Yummy stuff in my tummy....");
+    Animal* copied = NULL;
+    Animal* copied_2 = NULL;
 
-    copied = new Cat(*sec);
+    std::cout << "********************Base" << std::endl;
+
+    std::cout << "********************Dog" << std::endl;
+    pri->addIdea("wow!!!!!!!!!!!!!!!!");
+    pri->addIdea("such idea!!!!!");
+    pri->speakIdea(0);
+    pri->speakIdea(1);
+
+    std::cout << "********************Cat" << std::endl;
+    sec->addIdea("Tuna for me and for my compatriots!");
+    sec->addIdea("Thine tiny mind shall not understand my true feline ideals");
+    sec->speakIdea(0);
+    sec->speakIdea(1);
+
+    copied = new Dog(pri);
+    copied_2 = new Cat(sec);
+    delete pri;
     delete sec;
-    brain = copied->getBrain();
-    brain->show_idea(0);
-    brain->show_idea(1);
+
+    std::cout << "******************DeepCopy" << std::endl;
+    std::cout << "********************Dog" << std::endl;
+    copied->speakIdea(0);
+    copied->speakIdea(1);
     delete copied;
+
+    std::cout << "********************Cat" << std::endl;
+    copied_2->speakIdea(0);
+    copied_2->speakIdea(1);
+    delete copied_2;
+
 }
 
 int main() {
     std::cout << std::endl << "-Basic" << std::endl << std::endl;
     basic_operation_test();
-
-    std::cout << std::endl << "-Polymorphism" << std::endl << std::endl;
     polymorphism();
 
-    std::cout << std::endl << "-Extra Polymorphism" << std::endl << std::endl;
-    polymorphism_two();
-
-    std::cout << std::endl << "-Deep Copy test" << std::endl << std::endl;
+    std::cout << std::endl << "-DeepCopy test" << std::endl;
     deep_copy();
+
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 01:49:26 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:41:32 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,20 @@ void too_many_materia() {
 
     ICharacter* me = new Character("me");
 
-    AMateria    *tmp;
+    AMateria    *a = src->createMateria("ice");
+    AMateria    *b = src->createMateria("ice");
+    AMateria    *c = src->createMateria("cure");
+    AMateria    *d = src->createMateria("cure");
 
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-    me->equip(tmp);
-    me->equip(tmp);
-    me->equip(tmp);
-    me->equip(tmp);
+    me->equip(a);
+    me->equip(b);
+    me->equip(c);
+    me->equip(d);
+    me->equip(a);
+    me->equip(b);
     me->unequip (0);
-    me->equip(tmp);
-    me->equip(tmp);
+    me->equip(a);
+    me->equip(d);
 
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
@@ -73,10 +74,12 @@ void too_many_materia() {
 
 int main() {
 
+    std::cout << "################### Basic test ##################" << std::endl;
     basic_test();
 
     std::cout << std::endl;
 
+    std::cout << "#############Too many materia test ##############" << std::endl;
     too_many_materia();
 
     return 0;

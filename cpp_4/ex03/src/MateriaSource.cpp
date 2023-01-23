@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 23:27:20 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 01:44:40 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:44:29 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 #include <ostream>
 
 MateriaSource::MateriaSource (void) {
+
     for (int i = 0; i < 4; i++)
         materia_memory[i] = NULL;
     for (int i = 0; i < 100; i++)
         materia_bank[i] = NULL;
+
     memory_index = 0;
     bank_index = 0;
 }
@@ -51,6 +53,7 @@ MateriaSource::~MateriaSource (void) {
 }
 
 AMateria    *MateriaSource::createMateria(std::string const &type) {
+
     if (bank_index >= 100 && destroyMateria() == 0) {
         std::cout << "Materia Bank limit reached!" <<std::endl;
         return (NULL);
@@ -92,6 +95,7 @@ void        MateriaSource::forgetMateria (void) {
     materia_memory[memory_index] = NULL;
 }
 
+// Find a dropped materia, and check if is being used, if not destroy it
 int         MateriaSource::destroyMateria (void) {
     if (memory_index == 0)
         return (-1);

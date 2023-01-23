@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:08:16 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 19:37:24 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:08:07 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,15 @@ Dog::Dog (const Dog &animal) : Animal::Animal() {
     std::cout << "Dog copied" << std::endl;
 }
 
-Dog::Dog (const Animal &animal) {
-    type = animal.getType();
-    brain = new Brain(*(animal.getBrain()));
+Dog::Dog (const Animal *animal) : Animal::Animal() {
+    type = animal->getType();
+    brain = new Brain(*animal->getBrain());
     std::cout << "Dog copied" << std::endl;
 }
 
 Dog &Dog::operator= (const Dog &animal) {
     type = animal.type;
-    *brain = *animal.brain;
-    std::cout << "Dog copy assign" << std::endl;
-    return (*this);
-}
-
-Dog &Dog::operator= (const Animal &animal) {
-    type = animal.getType();
-    *brain = *(animal.getBrain());
+    *brain = *(animal.brain);
     std::cout << "Dog copy assign" << std::endl;
     return (*this);
 }
@@ -54,4 +47,20 @@ Dog::~Dog (void) {
 
 void    Dog::makeSound (void) const {
     std::cout << "Bark" << std::endl;
+}
+
+void    Dog::addIdea(const std::string &idea) const {
+    brain->add_idea(idea);
+}
+
+void    Dog::forgetIdea(void) const{
+    brain->delete_idea();
+}
+
+void    Dog::speakIdea(int index) const{
+    brain->show_idea(index);
+}
+
+Brain   *Dog::getBrain(void) const {
+    return (brain);
 }

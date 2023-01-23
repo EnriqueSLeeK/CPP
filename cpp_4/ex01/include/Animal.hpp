@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 14:42:20 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 19:21:28 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:07:06 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class Animal {
     protected:
-        Brain       *brain;
         std::string type;
+
     public:
         Animal (void);
         Animal (const Animal &animal);
@@ -27,8 +27,12 @@ class Animal {
         virtual ~Animal (void);
 
         std::string getType (void) const;
-        Brain       *getBrain (void) const;
         virtual void    makeSound (void) const;
+
+        virtual void    addIdea(const std::string &idea) const;
+        virtual void    forgetIdea(void) const;
+        virtual void    speakIdea(int index) const;
+        virtual Brain   *getBrain(void) const;
 };
 
 #endif

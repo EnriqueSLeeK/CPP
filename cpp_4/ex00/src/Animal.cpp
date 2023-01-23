@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:02:05 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 16:27:36 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:20:42 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 #include <iostream>
 #include <ostream>
 
-Animal::Animal () {
-    type = "";
+Animal::Animal () : type("") {
     std::cout << "Animal constructed" << std::endl;
 }
 
 Animal::Animal (const Animal &animal) {
-    type = animal.type;
+    *this = animal;
     std::cout << "Animal copied" << std::endl;
 }
 

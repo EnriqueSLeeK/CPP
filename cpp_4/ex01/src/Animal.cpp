@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:02:05 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/18 19:22:21 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:08:18 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 Animal::Animal () {
     type = "";
-    brain = NULL;
     std::cout << "Animal constructed" << std::endl;
 }
 
@@ -40,4 +39,17 @@ void    Animal::makeSound (void) const {
     std::cout << "######## ELDRITCH SOUND ########" << std::endl;
 }
 
-Brain   *Animal::getBrain (void) const { return (brain); }
+void    Animal::addIdea(const std::string &idea) const {
+    (void)idea;
+}
+
+void    Animal::forgetIdea(void) const{
+}
+
+void    Animal::speakIdea(int index) const{
+    (void)index;
+}
+
+Brain   *Animal::getBrain(void) const {
+    return (NULL);
+}

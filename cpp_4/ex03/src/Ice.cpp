@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 21:46:02 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/19 01:27:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:46:38 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <ostream>
 
 Ice::Ice () {
+    std::cout << "Ice created" << std::endl;
     type = "ice";
     equiped = 0;
 }
@@ -29,7 +30,9 @@ Ice &Ice::operator= (const Ice &materia) {
     return (*this);
 }
 
-Ice::~Ice (void) {}
+Ice::~Ice (void) {
+    std::cout << "Ice destroyed!!" << std::endl;
+}
 
 void    Ice::use(ICharacter &target) {
     std::cout << "* shoots an ice bolt "
