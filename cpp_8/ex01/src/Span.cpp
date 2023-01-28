@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 21:09:32 by ensebast          #+#    #+#             */
-/*   Updated: 2023/01/28 18:33:47 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:21:37 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,17 @@ void    Span::addNumber(int elem) throw (std::exception) {
 }
 
 int     Span::shortestSpan(void) throw (std::exception) {
-    if (arr.size() == 0 || arr.size() == 1)
+    if (arr.size() <= 1)
         throw std::exception();
-    int min = *(std::min_element(arr.begin(), arr.end()));
-    int sec_min = *(std::max_element(arr.begin(), arr.end()));
-    for (std::size_t i = 0; i < arr.size(); i++) {
-        if (sec_min > arr[i] && min != arr[i])
-            sec_min = arr[i];
+    sort(arr.begin(), arr.end());
+    int min = arr[1] - arr[0];
+    if (arr.size() == 2)
+        return (min);
+    for (std::size_t i = 1; i < arr.size() - 1; i++) {
+        if (min > arr[i] - arr[i + 1])
+            min = arr[i + 1] - arr[i];
     }
-    return (sec_min - min);
+    return (min);
 }
 
 int     Span::longestSpan(void) throw (std::exception) {
