@@ -36,7 +36,7 @@ void    std_test (void) {
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "Bad index" << '\n';
     }
     try
     {
@@ -44,14 +44,13 @@ void    std_test (void) {
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "Out of bound" << '\n';
     }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
     }
-    std::cout << numbers.size() << std::endl;
     delete [] mirror;//
 }
 

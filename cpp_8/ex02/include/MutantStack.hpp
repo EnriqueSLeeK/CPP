@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:39:50 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/22 00:04:03 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 01:19:13 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ class MutantStack : public std::stack<T> {
         ~MutantStack<T> (void) {}
 
         typedef typename std::stack<T>::container_type::iterator iterator;
+
         iterator begin(void) { return (this->c.begin()); }
         iterator end(void) { return (this->c.end()); }
+
+        typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+        reverse_iterator rbegin(void) { return (this->c.rbegin()); }
+        reverse_iterator rend(void) { return (this->c.rend()); }
 
 };
 

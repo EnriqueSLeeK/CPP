@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:47:10 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 22:38:15 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:33:28 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 // Ugly test
 void    test(Span &s, int n) {
     try {
-        for (int i = 0; i < n; i++)
-                s.addNumber(i);
+        int k[n];
+        for (int i = 0; i < n; i++) k[i] = i;
+        s.fill_number(k, k + n);
+        std::cout << "insertion done" << std::endl;
     } catch (std::exception &e) {
         std::cout << "Insertion not possible" << std::endl;
     }
@@ -42,9 +44,9 @@ int main() {
     Span k(1);
     Span s(10000);
 
-    test(s, 10000);
-    test(k, 1);
     test(o, 1);
+    test(k, 1);
+    test(s, 10000);
     return (0);
 }
 

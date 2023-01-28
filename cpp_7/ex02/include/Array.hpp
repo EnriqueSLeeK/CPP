@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:01:40 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/24 20:45:35 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/23 01:02:46 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class Array {
                     quant++;
                 return (array[i]);
         }
+
         const T   &operator[] (unsigned int i) const throw(std::exception) {
                 if (i >= capacity)
                     throw std::exception();

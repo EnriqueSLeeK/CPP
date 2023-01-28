@@ -6,18 +6,20 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 00:08:34 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 00:15:23 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:26:09 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-Data::Data (void) {}
+Data::Data (void) {
+    something = "Pew";
+}
 Data::Data (const Data &data) {
-    (void)data;
+    *this = data;
 }
 Data  &Data::operator= (const Data &data) {
-    (void)data;
+    something = data.something;
     return (*this);
 }
 Data::~Data (void) {}

@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 21:05:57 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 22:37:13 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:29:43 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Span {
         Span (const Span &span);
         Span &operator=(const Span &span);
         ~Span (void);
+
+        void    fill_number (int *begin, int *end) throw(std::exception);
 
         void    addNumber(int elem) throw(std::exception);
         int     shortestSpan(void) throw(std::exception);

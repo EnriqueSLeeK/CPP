@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 21:09:32 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 22:31:43 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:33:47 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,14 @@ int     Span::longestSpan(void) throw (std::exception) {
         throw std::exception();
     return (*(std::max_element(arr.begin(), arr.end()))
             - *(std::min_element(arr.begin(), arr.end())));
+}
+
+void    Span::fill_number (int *begin, int *end)
+        throw (std::exception) {
+    while (begin != end) {
+        if (arr.size() >= limit)
+            throw std::exception();
+        arr.push_back(*begin);
+        ++begin;
+    }
 }

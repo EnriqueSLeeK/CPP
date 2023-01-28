@@ -6,7 +6,7 @@
 /*   By: ensebast <ensebast@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 00:04:02 by ensebast          #+#    #+#             */
-/*   Updated: 2022/12/21 00:08:06 by ensebast         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:25:22 by ensebast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define DATA_HPP
 
 #include <stdint.h>
+#include <string>
 
 class Data {
+    private:
+        std::string something;
     public:
         Data ();
         Data (const Data &data);
